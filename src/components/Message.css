@@ -1,0 +1,10 @@
+.message{
+    width: fit-content;
+    border: 1px #129ec9 solid;
+    background-color: #129ec9;
+    margin: 1rem;
+    box-shadow: 1px 1px 1px 1px black;
+}
+.color{
+    color: white;
+}
