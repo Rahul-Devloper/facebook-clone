@@ -3,14 +3,22 @@ import { useEffect } from "react";
 import { useState } from "react";
 import "./App.css";
 import Message from "./components/Message";
+import db from "./Firebase";
 
 function App() {
   const [input, setInput] = useState('');
-  const [messages, setMessages] = useState([{username: "Surya", text: "Hello"}, {username: "Deepak", text: "Hi"}]);
+  const [messages, setMessages] = useState([]);
   const [username, setUsername] = useState('');
 
   console.log(input);
   console.log(messages);
+
+  useEffect(()=>{
+    //this is the db 
+    db.collection('Fb-Messages').onSnapshot(snapshot=>{
+      setMessages(snapshot.docs.map(doc=> doc.data()))
+    })
+  }, [])
 
   useEffect(()=>{
     setUsername(prompt('Please enter your name'))
@@ -47,7 +55,7 @@ function App() {
       </form>
 
       {messages.map((message) => (
-        <Message username={message.username} text={message.text} />
+        <Message username={username} message={message} />
       ))}
     </div>
   );
