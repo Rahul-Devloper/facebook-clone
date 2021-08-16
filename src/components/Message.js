@@ -1,12 +1,14 @@
 import { Card, CardContent, Typography } from "@material-ui/core";
-import React from "react";
+import React, { forwardRef } from 'react';
 import './Message.css'
+import FlipMove from 'react-flip-move';
 
-const Message = ({username, message}) => {
+
+const Message = forwardRef(({username, message}, ref) => {
 const isUser = username === message.username;
    
   return (
-    <div>
+    <div ref={ref}>
       <Card className= {`message ${isUser && 'message-user'}`}>
         <CardContent>
           <Typography className='color' gutterBottom>
@@ -16,6 +18,6 @@ const isUser = username === message.username;
       </Card>
     </div>
   );
-};
+})
 
 export default Message;
