@@ -12,7 +12,7 @@ const isUser = username === message.username;
       <Card className= {`message ${isUser && 'message-user'}`}>
         <CardContent>
           <Typography className='color' gutterBottom>
-            {message.username}: {message.text}
+            {!isUser && `${message.username ||'Unknown User' } :`} {message.text}
           </Typography>
         </CardContent>
       </Card>

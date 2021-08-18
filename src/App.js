@@ -46,10 +46,10 @@ function App() {
       <img src="https://facebookbrand.com/wp-content/uploads/2020/10/Logo_Messenger_NewBlurple-399x399-1.png?w=100&h=100" alt="" />
       <h1>Facebook Messenger Clone</h1>
       <h2>{username} </h2>
-      <form>
-        <FormControl>
-          <InputLabel>Enter a Message...</InputLabel>
+      <form className='app_form'>
+        <FormControl className='app_formControl'>
           <Input
+            placeholder='Enter a message'
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -61,7 +61,7 @@ function App() {
             type="submit"
             onClick={sendMessage}
           >
-            Send Message
+            Send
           </Button>
         </FormControl>
       </form>
