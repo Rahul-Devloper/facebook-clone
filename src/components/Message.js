@@ -1,7 +1,6 @@
 import { Card, CardContent, Typography } from "@material-ui/core";
 import React, { forwardRef } from 'react';
 import './Message.css'
-import FlipMove from 'react-flip-move';
 
 
 const Message = forwardRef(({username, message}, ref) => {
