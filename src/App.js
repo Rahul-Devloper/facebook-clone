@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     //this is the db
     db.collection("Fb-Messages")
-    .orderBy('timestamp', 'desc')
+    .orderBy('timestamp', 'asc')
     .onSnapshot((snapshot) => {
       setMessages(snapshot.docs.map((doc) => ({id: doc.id, message: doc.data()})));
     });
